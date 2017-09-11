@@ -23,5 +23,5 @@ function deepestChild() {
       current = next.shift()
     }
 
-  return current
+  return current[0]
 }
