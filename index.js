@@ -6,10 +6,11 @@ function nestedTarget() {
   return document.getElementById('nested').querySelector('div.target')
 }
 
-function increaseRankBy(n) {
+function increaseRankBy(
+) {
   var lis = document.querySelectorAll('ul.ranked-list')
   for (let i = 0; i < lis.length; i++) {
-    lis[i].innerHTML = (i + 1).toSting()
+    lis[i].innerHTML = (i + n).toString()
   }
 }
 
