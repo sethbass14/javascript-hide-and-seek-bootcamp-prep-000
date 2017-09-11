@@ -20,6 +20,6 @@ function deepestChild() {
       current = current.querySelectorAll('div')// <div><div><div?>boo!<div><div><div>
       }
     current = next.shift()
-  }
-  return current.innerHTML
+  
+  return current
 }
