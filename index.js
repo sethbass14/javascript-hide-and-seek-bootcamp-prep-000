@@ -44,36 +44,14 @@ function increaseRankBy(n) {
 }
 
 
-// function deepestChild() {
-//   let grand = document.querySelector('#grand-node').querySelectorAll('div')
-//   let grandArr = [...grand]
-//   return grandArr.pop()
-// }
-
-// Take a look at this
-// function deepestChild() {
-//   let grand = document.querySelectorAll('div#grand-node')
-//   // let grandArr = [...grand]
-//   let current = grand
-//   let next = []
-//   while (current.length >= 1) {
-//     for (let i = 0; i < current.length; i++){
-//         console.log(current[i].querySelectorAll('div'))
-//         next.push(current[i].querySelectorAll('div'))
-//         current = next.shift()
-//     }
-//
-//   }
-//   return current[0]
-// }
-
 function deepestChild() {
-  let grand = document.getElementById('app').querySelectorAll('div#grand-node div')
-  let grandArr = [...grand]
-  return grandArr.pop()
-  // console.log(grand)
-  // let myArr = [].concat.apply([], grand)
-  // console.log(myArr)
-  // console.log(myArr[myArr.length - 1])
-  // return myArr[myArr.length - 1]
+  let grand = document.querySelectorAll('div#grand-node')
+  // let grandArr = [...grand]
+  // Query selector All returns a node which is an array like object. the .children method will always return an empty array like object that evaluates to truthy. But, calling length on it will return 0 which evaluates to falsey!
+  let current = grand
+  while (current[0].children.length) {
+    current = current[0].children
+    debugger
+    }
+  return current[0].innerHTML
 }
